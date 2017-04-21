@@ -1,0 +1,1 @@
+from proper_divisors import *

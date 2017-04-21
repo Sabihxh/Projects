@@ -1,0 +1,45 @@
+UPDATE artworks SET availability = 9 WHERE invoiceNumber <> '';
+
+UPDATE artworks SET saleDetails = CONCAT('Invoice Number: ', invoiceNumber, '\n', saleDetails) WHERE invoiceNumber <> '' and saleDetails <> '';
+
+UPDATE artworks SET saleDetails = CONCAT('Invoice Number: ', invoiceNumber) WHERE invoiceNumber <> '' and saleDetails = '';
+
+INSERT INTO tablename SET colname = value, colname2= '';
+
+"INSERT INTO fl_interactive_categories(`id`, `site`, `name`) VALUES (%d, '%s', '%s');" % (categories.get(category), database, encode_sql(encode_xml(category)))
+
+
+UPDATE fl_interactive_users SET categories = CONCAT(categories, '\r',  '%s') WHERE id = %s;"%('\r'.join(new_categories), row.get('ID'))
+
+
+SELECT CONCAT(firstname, ' ', lastname), email, COUNT(*) AS 'Repeated' FROM fl_interactive_users GROUP BY CONCAT(firstname, ' ', lastname) HAVING COUNT(*) > 1;
+
+SELECT firstname, lastname, fl_interactive_users.email from fl_interactive_users INNER JOIN (SELECT email from fl_interactive_users GROUP BY email HAVING count(email) > 1) dup ON fl_interactive_users= dup.email;
+
+
+SELECT fullname, email, creationdate, count(*) FROM fl_interactive_users GROUP BY CONCAT(lastname, firstname) HAVING COUNT(*) > 1 ORDER BY lastname;
+
+SELECT id, name, speed from laptops WHERE name in (SELECT name from laptops GROUP BY name HAVING count(*) > 1);
+
+Following should work, but takes huge amount of time...
+SELECT fullname from fl_interactive_users WHERE fullname IN (SELECT fullname from fl_interactive_users GROUP BY fullname HAVING COUNT(*) > 1
+
+
+--Vinylfactory--
+SELECT artist, UPPER(SUBSTRING(artist, LOCATE(' ', artist) + 1, 2)) FROM artworks WHERE artist != '';
+
+SELECT id, artist, stockNumber, UPPER(CONCAT(LEFT(artist, 1), SUBSTRING(artist, LOCATE(' ', artist) + 1, 2))) FROM artworks WHERE artist != '';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
