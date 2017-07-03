@@ -45,7 +45,7 @@ def sim_distance(prefs, person1, person2):
     #add up squares of all the differences
     sum_of_squares = sum([pow(prefs[person1][item] - prefs[person2][item], 2) 
         for item in prefs[person1] if item in prefs[person2]])
-    print sum_of_squares
+
     return 1.0/(1+sum_of_squares)
 
 
@@ -59,7 +59,6 @@ def sim_pearson(prefs, p1, p2):
         if item in prefs[p2]: si[item] = 1
 
     #find the number of elements
-    # print si
     n = len(si)
 
     #If there are no ratings in common
@@ -113,7 +112,6 @@ def getRecommendations(prefs, person, similarity = sim_pearson):
     #Return the sorted list
     rankings.sort()
     rankings.reverse()
-    print rankings
     return rankings
 
 # getRecommendations(critics, 'Toby', similarity = sim_pearson)
@@ -157,22 +155,21 @@ def calculateSimilarItems(prefs,n=10):
     return result
 
 
+def loadMovieLens(path='./ml-100k'):
+    #Get movie titles
+    movies = {}
+    for line in open(path+'/u.item'):
+        (id, title) = line.split('|')[0:2]
+        movies[id] = title
 
+    #Load data
+    prefs = {}
+    for line in open(path+'/u.data'):
+        (user, movieid, rating, ts) = line.split('\t')
+        prefs.setdefault(user, {})
+        prefs[user][movies[movieid]] = float(rating)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return prefs
 
 
 

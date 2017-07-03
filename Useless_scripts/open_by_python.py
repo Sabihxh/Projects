@@ -1,4 +1,5 @@
-def test():
-    return 'yea', 'nah'
+from pprint import pprint
 
-print test()[1]
+my_dict = {'name': 'Yasoob', 'age': 'undefined', 'personality': 'awesome'}
+pprint(my_dict)
+print my_dict

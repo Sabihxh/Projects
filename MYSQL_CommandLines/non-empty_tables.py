@@ -13,4 +13,4 @@ AND TABLE_SCHEMA='ivde'
 SELECT table_name 
 FROM information_schema.tables 
 WHERE table_rows >= 1 
-AND TABLE_SCHEMA='nac'
+AND TABLE_SCHEMA='esthellaprovas'

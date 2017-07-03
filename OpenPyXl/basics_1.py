@@ -1,18 +1,24 @@
-from openpyxl import Workbook
-from openpyxl.compat import range 
-from openpyxl.utils import get_column_letter
 from datetime import datetime
+from openpyxl import load_workbook
+import string
+from flpy.excel import rows_to_excel
+
+uppercase_alphabets = string.ascii_uppercase
 
 
-wb = Workbook()
+wb = load_workbook(filename = './excel/testtest.xlsx', read_only=True)
+ws = wb['Downloaded']
 
-ws = wb.active
+result = []
+
+for cell_index_letter in range(0, 26):
+    cell_letter = uppercase_alphabets[cell_index_letter]
+    cell_index = '%s1' % cell_letter
+    c = ws[cell_index]
+    if c:
+        for y in range(2, 31):
+            column = '%s%s' % (cell_index[0], y)
+            if ws[column].value:
+                print ws[column].value
 
 
-ws.append([1, 2, 3])
-ws['A2'] = datetime.now()
-ws['B2'] = '42'
-
-
-wb.save('./excel/test.xlsx')
-print 'file created'
