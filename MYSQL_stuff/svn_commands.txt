@@ -1,5 +1,0 @@
---To add all files in a directory to repository--
-svn add jackbell/*
---To commit all files in a directory to repository--
-svn commit jackbell/* -m "mailing footer files"
-
