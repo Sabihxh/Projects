@@ -1,0 +1,26 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 11.2.5//EN
+N:Test Last Name;Test Name;;;
+FN: Test Name  Test Last Name 
+ORG:Artlogic;
+EMAIL;type=INTERNET;type=HOME;type=pref:email@test.com
+EMAIL;type=INTERNET;type=WORK:email2@test.com
+item1.EMAIL;type=INTERNET:email3@test.com
+item1.X-ABLabel:iCloud
+TEL;type=HOME;type=VOICE;type=pref:07419 112269
+TEL;type=WORK;type=VOICE:07419 112268
+TEL;type=IPHONE;type=CELL;type=VOICE:07419 112267
+TEL;type=CELL;type=VOICE:07419 112266
+TEL;type=MAIN:07419 112265
+TEL;type=HOME;type=FAX:07419 112264
+TEL;type=WORK;type=FAX:07419 112263
+TEL;type=PAGER:07419 112262
+TEL;type=OTHER;type=VOICE:07419 112261
+item2.ADR;type=HOME;type=pref:;;1 Street Test\nTest Road;London;UK;SW4 0AS;United Kingdom
+item2.X-ABADR:gb
+item3.ADR;type=WORK:;;Test 2\nTest D;London;UK;SW4 0AS;United Kingdom
+item3.X-ABADR:gb
+item4.URL;type=pref:www.url.co.uk
+item4.X-ABLabel:_$!<HomePage>!$_
+END:VCARD
